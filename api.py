@@ -7,10 +7,12 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-# IBMiUploader
+# /IBMiUploaderでPUT この場合 http:localhost:3001/IBMiUploader
+# にリクエストを投げます。
 @app.route("/IBMiUploader",methods=['PUT'])
 def asuploader():
-
+    
+    # リクエストされるパラメータです。
     file = request.files['file']
     table_name = request.form['tableName']
     start_row = int(request.form['startRow'])
@@ -25,6 +27,8 @@ def asuploader():
     
     return result
 
+# ローカルホストport3001でリッスン 0,0,0,0 
+# を指定すると他のリモートPCからも接続できます。
 if __name__ == '__main__':
     app.debug = True
     app.run(debug=False, host='0.0.0.0', port=3001)

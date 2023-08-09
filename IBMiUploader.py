@@ -16,8 +16,8 @@ from flask import request
 # ODBCデータソース名とIBMiのユーザー名とパスワード
 DATA_SOURCE_NAME = 'MTZAPI'
 # 使用しているユーザー名、パスワードを入力して下さい。
-UID = ''
-PID = ''
+UID = 'MZ'
+PID = 'MZ'
 
 # pandasでNANになってしまったときに代わりに代入する値
 IMPUTATION_VALUE_FLOAT_INT = 0
